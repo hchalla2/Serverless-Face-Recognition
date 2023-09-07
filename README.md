@@ -2,11 +2,6 @@
 
 **CSE 546 — Project Report**
 
-*Hari Sai Charan Challa(1225461861)*
-
-*Sathwik Katakam(1225445585)*
-
-*Hari Murugan Ravindran(1222324688)*
 
 **1. Problem statement**
 
@@ -228,73 +223,6 @@ function named "Concurrency".We have provided a concurrency limit of 10 in our a
 
 default, we are provided with a concurrency limit of 1000 across all regions.
 
-**2.3 Member Tasks**
-
-**Hari Sai charan challa (1225461861)**
-
-My work in this project spanned mainly across Docker, ECR, S3 buckets and Lambda Triggers. I
-
-have first set up a git account and a new AWS account for collaborative development. Then, created
-
-docker images after understanding how docker and containers work. I also learnt about AWS ECR and
-
-have pushed created docker image into ECR account. I have also created S3 buckets ‘input-video-hsh’
-
-and ‘output-video-hsh’, lambda function ‘image-function’. Finally, linked all 3 parts docker-image, input
-
-bucket and lambda function via lambda triggers. In the end, I have tested all these parts without
-
-involving facial recognition code. Once all the parts have been developed we have also done a few
-
-rounds of end to end testing.
-
-**Sathwik Katakam (1225445585)**
-
-I was involved in the following three modules of the project: S3 client, Frame Extractor, and Face
-
-Detection. The S3 client interacts with input and output S3 buckets and downloads input videos to a local
-
-temp path. It also uploads the resultant data obtained after querying the DynamoDB to the output S3
-
-bucket in a CSV format. The Frame Extractor module extracts frames from the input videos using the
-
-FFmpeg library and saves them in a local directory. The Face Detection module uses the face\_recognition
-
-library to load and compare encodings of the saved frames to detect faces. Once a match is found, the
-
-detected face is passed on to the next module to query the database for student-related data.
-
-**Hari Murugan Ravindran(1222324688)**
-
-Responsible for the setting up of the student's academic information and retrieval on Amazon
-
-DynamoDB and also the part where the identified students' records are tabulated into a CSV file and
-
-Pushed into the Output Bucket as Output. Initially, I would set up the Amazon DynamoDB then I used
-
-Amazon Cloud9 which is the cloud-based integrated Development Environment(IDE) and created the
-
-table used for storing the student academic info, then I used the student\_data.json for populating the
-
-database which will be helpful in getting the students academic information for the identified student
-
-name. Now I'm also responsible for the part where the data is fetched by the lambda function from the
-
-student data for the identified student name. Then the data is stored in the CSV files which are then
-
-pushed into the Output Bucket. The output file consists of the video file name which the users have
-
-uploaded as input on which the frame extraction and face recognition happened, the name of the
-
-identified student as well as their academic record. After all of these different kinds of testing are done. I
-
-have also manually cross-verified whether the students' names are identified correctly and also whether
-
-their respective academic record is stored as the output in the Bucket as the CSV file.
-
-
-
-<a name="br5"></a> 
 
 **3.** **Testing and evaluation**
 
